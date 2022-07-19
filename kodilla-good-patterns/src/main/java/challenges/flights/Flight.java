@@ -5,7 +5,7 @@ import java.util.HashSet;
 public class Flight {
 
     private String departure;
-    private HashSet<String> arrival = new HashSet<>();
+    private HashSet<String> arrival;
 
     public Flight(String departure, HashSet<String> arrival) {
         this.departure = departure;
