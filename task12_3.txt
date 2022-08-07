@@ -1,0 +1,39 @@
+CREATE TABLE ISSUESLISTS
+(
+    ID SERIAL PRIMARY KEY,
+    NAME VARCHAR(50)
+);
+
+CREATE TABLE ISSUES
+(
+    ID SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    SUMMARY VARCHAR(100),
+    DESCRIPTION VARCHAR(1024),
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+INSERT INTO ISSUESLISTS (NAME) VALUES
+("ToDo"),
+("In progress"),
+("Done");
+
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY)
+VALUES (1,"Wash dishes"),
+(1,"Paint"),
+(1,"Clean"),
+(1,"Read a book"),
+(1,"Read a novel"),
+(2,"Vacuum"),
+(2,"Go out with a dog"),
+(2,"Do a homework"),
+(2,"Sing"),
+(2,"Go out with a dog"),
+(3,"Meet freinds"),
+(3,"Go hiking"),
+(3,"Go to a swim"),
+(3,"Write a book"),
+(3, "Go to the cinema");
