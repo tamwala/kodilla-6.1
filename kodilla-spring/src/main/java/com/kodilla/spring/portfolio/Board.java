@@ -25,6 +25,6 @@ public class Board {
     }
 
     public void addTask(TaskList taskList, String task) {
-        taskList.tasks.add(task);
+        taskList.getTasks().add(task);
     }
 }
