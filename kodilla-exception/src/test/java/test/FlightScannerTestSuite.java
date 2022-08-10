@@ -13,8 +13,8 @@ public class FlightScannerTestSuite {
         //Given
         Flight flight = new Flight("Gdańsk", "Warszawa");
         FlightScanner flightScanner = new FlightScanner();
-        flightScanner.availableFlights.put("Warszawa", true);
-        flightScanner.availableFlights.put("Poznań", false);
+        flightScanner.getAvailableFlights().put("Warszawa", true);
+        flightScanner.getAvailableFlights().put("Poznań", false);
 
         //When & Then
         assertDoesNotThrow(() -> flightScanner.findFlight(flight));
@@ -27,8 +27,8 @@ public class FlightScannerTestSuite {
         //Given
         Flight flight = new Flight("Gdańsk", "Kraków");
         FlightScanner flightScanner = new FlightScanner();
-        flightScanner.availableFlights.put("Warszawa", true);
-        flightScanner.availableFlights.put("Poznań", false);
+        flightScanner.getAvailableFlights().put("Warszawa", true);
+        flightScanner.getAvailableFlights().put("Poznań", false);
 
         //When & Then
         assertThrows(RouteNotFoundException.class, () -> flightScanner.findFlight(flight));

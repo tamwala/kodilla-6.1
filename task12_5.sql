@@ -1,0 +1,9 @@
+INSERT INTO POSTS (USER_ID, BODY)
+VALUES (1, "This is my first post!");
+
+UPDATE POSTS
+SET BODY = "To delete"
+WHERE ID = 9;
+
+DELETE FROM POSTS
+WHERE ID = 9;

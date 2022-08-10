@@ -18,8 +18,8 @@ public class FlightScannerRunner {
         Flight fligh = new Flight(userInput1, userInput2);
 
         FlightScanner flightScanner = new FlightScanner();
-        flightScanner.availableFlights.put("Warszawa", true);
-        flightScanner.availableFlights.put("Poznań", false);
+        flightScanner.getAvailableFlights().put("Warszawa", true);
+        flightScanner.getAvailableFlights().put("Poznań", false);
 
         try {
             flightScanner.findFlight(fligh);
