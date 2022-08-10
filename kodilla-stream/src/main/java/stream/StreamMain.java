@@ -1,15 +1,10 @@
 package stream;
 
-import stream.beautifier.PoemBeautifier;
-import stream.book.Book;
-import stream.book.BookDirectory;
-import stream.forumuser.Forum;
-import stream.forumuser.ForumUser;
-import stream.iterate.NumbersGenerator;
-import stream.person.People;
-
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import stream.forumuser.Forum;
+import stream.forumuser.ForumUser;
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -27,5 +22,5 @@ public class StreamMain {
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
 
-
-    }}
+    }
+}
