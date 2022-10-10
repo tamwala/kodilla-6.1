@@ -7,7 +7,21 @@ import java.util.List;
 
 @NamedQuery(
         name = "Employee.retrieveEmployeesWithLastname",
-        query = "FROM Employee WHERE lastname = :LASTNAME")
+        query = "FROM Employee WHERE lastname = :LASTNAME"
+)
+
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Employee.retrieveFirstNameAnySigns",
+                query = "SELECT * FROM employee" +
+                        " WHERE FIRSTNAME LIKE CONCAT ('%', :ARG, '%')",
+                resultClass = Employee.class),
+        @NamedNativeQuery(
+                name = "Employee.retrieveLastNameAnySigns",
+                query = "SELECT * FROM employee" +
+                        " WHERE LASTNAME LIKE CONCAT ('%', :ARG, '%')",
+                resultClass = Employee.class)
+})
 
 @Entity
 @Table(name = "EMPLOYEE")

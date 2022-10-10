@@ -5,12 +5,18 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
+@NamedNativeQueries({
+        @NamedNativeQuery(
         name = "Company.retrieveFirstThreeSigns",
         query = "SELECT * FROM COMPANIES " +
                 "WHERE COMPANY_NAME LIKE CONCAT(SUBSTRING(:THREESIGNS, 1, 3), '%')",
-        resultClass = Company.class
-)
+        resultClass = Company.class),
+@NamedNativeQuery(
+        name = "Company.retrieveAnySigns",
+        query = "SELECT * FROM companies" +
+                " WHERE COMPANY_NAME LIKE CONCAT ('%', :NAMEPART, '%')",
+        resultClass = Company.class)
+        })
 
 @Entity
 @Table(name = "COMPANIES")
