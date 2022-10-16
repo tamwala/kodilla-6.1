@@ -15,7 +15,7 @@ public class ForumData {
         this.statistics = statistics;
     }
 
-    public void calculateAdvStatistics(Statistics statistics) {
+    public void calculateAdvStatistics() {
 
         this.usersCount = statistics.usersNames().size();
         this.postsCount = statistics.postsCount();
