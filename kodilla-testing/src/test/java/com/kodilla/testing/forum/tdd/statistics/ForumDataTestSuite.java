@@ -15,10 +15,10 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class ForumDataTestSuite {
-    static int testCounter;
-    Statistics statisticsMock = mock(Statistics.class);
-    ForumData forumData;
-    List<String> users;
+    private static int testCounter;
+    private Statistics statisticsMock = mock(Statistics.class);
+    private ForumData forumData;
+    private List<String> users;
 
 
     @BeforeAll
@@ -36,9 +36,7 @@ public class ForumDataTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
         forumData = new ForumData(statisticsMock);
-        users = new ArrayList<>();
-        users.add("Bolek");
-        users.add("Lolek");
+        users = List.of("Bolek", "Lolek");
     }
 
     @Test
